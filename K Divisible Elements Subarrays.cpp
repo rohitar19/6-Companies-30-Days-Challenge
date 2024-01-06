@@ -21,6 +21,27 @@
 //          return st.size();
 //     }
 // };
+// int countDistinct(vector<int>& nums, int k, int p) {
+//        //if array contain all the unquie element 
+//        // then in O(nlogn)
+//         int n=nums.size();
+//         vector<int>temp(n,0);
+//         vector<int>prefix(n+1);
+    
+//         for(int i=0 ;i<n ; i++){
+//             if(nums[i]%p==0)temp[i]=1;
+//         }
+//         prefix[0]=temp[0];
+//         for(int i=1 ;i<n ;i++){
+//             prefix[i]=prefix[i-1]+temp[i];
+//         }
+
+//         for(int i=1 ; i<=n ; i++){
+//             int check=prefix[i]-k;
+//             int index=lower_bound(prefix.begin() , prefix.end() , check)-prefix.begin();
+//             ans+=(i-index);
+//         }
+//         return ans;
 class Solution {
 public:
     //O(n2)*O(nlogn) for insert in set ~~ O(N3) 
